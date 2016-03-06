@@ -53,7 +53,7 @@ namespace PSAttack
                 System.Diagnostics.Process.EnterDebugMode();
             }
             // setup debug variable
-            String debugCmd = "$debug = @{'.NET'='" + System.Environment.Version + "';'isAdmin'='" + isAdmin + "'}";
+            String debugCmd = "$debug = @{'osVersion'='" + Environment.OSVersion.ToString() + "';'.NET'='" + System.Environment.Version + "';'isAdmin'='" + isAdmin + "'}";
             attackState.cmd = debugCmd;
             Processing.PSExec(attackState);
 

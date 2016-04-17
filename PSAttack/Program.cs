@@ -66,6 +66,7 @@ namespace PSAttack
             Console.Title = Strings.windowTitle;
             Console.BufferHeight = Int16.MaxValue - 10;
             Console.BackgroundColor = PSColors.background;
+            Console.TreatControlCAsInput = true;
             Console.Clear();
 
             // get build info

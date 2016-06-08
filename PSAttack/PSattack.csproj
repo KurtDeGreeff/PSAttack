@@ -109,29 +109,29 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="Get-Attack\get-attack.ps1" />
-    <EmbeddedResource Include="Modules\+I9AtZCyXLyZpHAejwURRg==.ps1.enc" />
-    <EmbeddedResource Include="Modules\0L9lK66Js2rn0NvMkSaUs+YEwPajKpXIi6NJ52BUn9I=.ps1.enc" />
-    <EmbeddedResource Include="Modules\0_fyGLrvvI4RH+336hgBfPO9Y8OkUO+xdNgTjQv1ask=.ps1.enc" />
-    <EmbeddedResource Include="Modules\1ASJ+e_C5AoDkEWdi7W3xnBn4m55pUv38E0FEgvTFfY=.ps1.enc" />
-    <EmbeddedResource Include="Modules\2Oqy5OxvUJp3l6nix8ULxO0S4mhfB2mbxXcfS6wJZ8Em3kICrarpS30oL7UOg9t9.ps1.enc" />
-    <EmbeddedResource Include="Modules\2u8Dvgp8uQZk+hy0fCg_YsSNHvQ3y3nuH2_7L86T7zY=.ps1.enc" />
-    <EmbeddedResource Include="Modules\3PDSYrxPWtkt7jvrBUb11o2xxUxviPPM7mO5ZGLYA_xFC35WMyrOIX1TYeMLa0C5.ps1.enc" />
-    <EmbeddedResource Include="Modules\75mhd7Ob8hGlHXfEaVS55ABTFzFGCM0XxN1Z16aH6NE=.ps1.enc" />
-    <EmbeddedResource Include="Modules\9rAbvt9U3G6F6h30VkJyPHo6p2IAi26fnDL4YWQZ9MI=.ps1.enc" />
-    <EmbeddedResource Include="Modules\cd1xLoVfPtsC9Y5IACgiCrnWkGy3UY7vT442i5g2u0VERZBxkKfeHNWmnxklmaY+.ps1.enc" />
-    <EmbeddedResource Include="Modules\dgGgQxlv2ejoiSljbqNsohl7wtkfLNdDN3tZKI+xtPc=.ps1.enc" />
-    <EmbeddedResource Include="Modules\E7JPrT+mukGHLfUVYvbPuFA2OcCmoMeTsIVTHfFLfnvUXJpUeO44jCRnvBnXKjHg.ps1.enc" />
-    <EmbeddedResource Include="Modules\fQBvnj7MwZ2Sf_eYwWwtnBu6PduOYl069HhQPV_UdiA=.ps1.enc" />
-    <EmbeddedResource Include="Modules\gloB72mOCMM80jlFaFf+AZB_ZFgSip9jJfkJi46rpkY=.ps1.enc" />
-    <EmbeddedResource Include="Modules\HhTW5Pux0saJw0XtvZmW_Q==.ps1.enc" />
-    <EmbeddedResource Include="Modules\IlBwNsUC9mNYV6yLuu0rZD58+3WoE43XBFZ2J58a9rE=.ps1.enc" />
-    <EmbeddedResource Include="Modules\lfkDbSj5DuALnH7XQRiqkwQ7MHVPZYHVJlJHDmRbzpK_A5yZ+qnkUidFMMz9rW7k.ps1.enc" />
-    <EmbeddedResource Include="Modules\lk1HvmELnc87VEYT1B30y+ehAciI6pPFqZaqkQPBJYr5wDl9XOMZsFzIw3wm1yNqTlj7wNXXFPsvhrKLp+lH5Q==.ps1.enc" />
-    <EmbeddedResource Include="Modules\lk1HvmELnc87VEYT1B30y4hMSSokMKRyOOyxzx2bWbo=.ps1.enc" />
-    <EmbeddedResource Include="Modules\lk1HvmELnc87VEYT1B30y_XGc_Ar3D+CeOZvdJ8MiCo=.ps1.enc" />
-    <EmbeddedResource Include="Modules\mm2UsmAKVYZh_NHPk3YlXw==.ps1.enc" />
-    <EmbeddedResource Include="Modules\Ra6GoU3qpGVO+2elH63e5qOwvpwCrbC5pzpIYopZYpHEc74Sg9Z8Ka00tr_v4zwi.ps1.enc" />
-    <EmbeddedResource Include="Modules\SAyp+gQ4rmob2dH5pC4SlwmC_VaJrldqpolbVzEdfiw=.ps1.enc" />
+    <EmbeddedResource Include="Modules\+ndE_JHbf5H2VOZ5PSPXbIqXundGCBW60CoNhXsSmY8=.ps1.enc" />
+    <EmbeddedResource Include="Modules\2i5EF6SqRdt05v9rhqQh8G1_vur2i_q0IqBMIN6It6tq_0AiRzjfAN3pyLAEKOrC.ps1.enc" />
+    <EmbeddedResource Include="Modules\CPp4mUFL618zXBnWXZ9bqmiEWV9h12fBp27MqH+G5FQ=.ps1.enc" />
+    <EmbeddedResource Include="Modules\CPp4mUFL618zXBnWXZ9bqp2woH5T9BgiNZfBHZ3ZHpA=.ps1.enc" />
+    <EmbeddedResource Include="Modules\CPp4mUFL618zXBnWXZ9bqvUvI34Q8jZhTuzEKOe33hJJdxpb+FUlHc80CqUldMcR9S6DhE+vEVEL0sI7hbMt_w==.ps1.enc" />
+    <EmbeddedResource Include="Modules\Et2M8ay1v_sDZt50dS_ynw==.ps1.enc" />
+    <EmbeddedResource Include="Modules\f7GGR43uclyWRPQFnzX1yermjwUSDAxlZ0wgSdHWVbuw9TvJv_kEEQOJXCyE2Vld.ps1.enc" />
+    <EmbeddedResource Include="Modules\fooiNc8Puat2DLTzZhX9eE6c6XL_Iqls9jDUMZXiXfw=.ps1.enc" />
+    <EmbeddedResource Include="Modules\g4S1mRfm0bfZaWJ9v+uo8qSibpEaiODBOu355uoPr8XjFrOwNseZEhiNdtJoJ4M1.ps1.enc" />
+    <EmbeddedResource Include="Modules\Ig5NAz480m6MccXc2gPfDsSkksjY8i12hAHjkF6TRjoYUn7XouLE+_7uAnxJFCeo.ps1.enc" />
+    <EmbeddedResource Include="Modules\jyKRCXqgi4WPRsXSt_WBwWMYjvIjcEitfKqjjzPhPtI=.ps1.enc" />
+    <EmbeddedResource Include="Modules\jyxgYB5jSc0GGy_YfurS+g==.ps1.enc" />
+    <EmbeddedResource Include="Modules\kdNmt4+TOSRA6EpEoWhd5c9zDtqTiYqE5kKS9y6UqUg=.ps1.enc" />
+    <EmbeddedResource Include="Modules\MfbTYGl82RBUy9qz7ocY8n2B0kAWx7nH3J4APnEfx+TDWeHeByWlzVmjKuPxEllU.ps1.enc" />
+    <EmbeddedResource Include="Modules\NqHEu5NMThDYFwqghFR_sCmtqn05oQChhE3_8Qzyw4g=.ps1.enc" />
+    <EmbeddedResource Include="Modules\pJIoz+lcwhCzlWfUerN8OQ==.ps1.enc" />
+    <EmbeddedResource Include="Modules\rvrV6BAffuX_JyFC6dRDsDOhxM_aBI1jlS3CCaehz5c=.ps1.enc" />
+    <EmbeddedResource Include="Modules\sAt0ZLVUkQaECHv520D5psCK9iewVU4VBZdbuVAWLY8=.ps1.enc" />
+    <EmbeddedResource Include="Modules\USu082_Bc5qCyHCSUe7gK54NZ_gzGjdlOIKspOlmWOw_1aIGV9AA3iQl2tNkaTvj.ps1.enc" />
+    <EmbeddedResource Include="Modules\U_3ZIMZWjwihx+ouRJ41Qz+2KIzl+9kb86Cqpudh1OM=.ps1.enc" />
+    <EmbeddedResource Include="Modules\WcSvDvGA85gMboaLCLSymvQFM4A6owADHAD6e+77YlI=.ps1.enc" />
+    <EmbeddedResource Include="Modules\XEan89sSdej+n7OM_WCfileOUk3cMhUoyGC4rDH00Pw=.ps1.enc" />
+    <EmbeddedResource Include="Modules\yPWobNNNV_A45bVEFiJ7ItNCvsiPHH6JdSh+DeE5t9I=.ps1.enc" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\attackDate.txt" />
@@ -150,6 +150,7 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>powershell -command "write-host (get-date -Format D) at (get-date -Format T)" &gt; "$(ProjectDir)\Resources\BuildDate.txt"</PreBuildEvent>

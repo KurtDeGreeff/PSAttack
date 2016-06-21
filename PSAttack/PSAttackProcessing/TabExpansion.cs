@@ -101,7 +101,7 @@ namespace PSAttack.PSAttackProcessing
                         result = attackState.results[attackState.loopPos].Members["Name"].Value.ToString();
                         break;
                     case "path":
-                        result = attackState.results[attackState.loopPos].Members["FullName"].Value.ToString();
+                        result = "\"" + attackState.results[attackState.loopPos].Members["FullName"].Value.ToString() + "\"";
                         break;
                     default:
                         result = attackState.results[attackState.loopPos].BaseObject.ToString();
@@ -140,7 +140,9 @@ namespace PSAttack.PSAttackProcessing
         static AttackState pathAutoComplete(AttackState attackState)
         {
             attackState.loopType = "path";
-            attackState.cmd = "Get-ChildItem " + attackState.autocompleteSeed + "*";
+            string pathSeed = attackState.autocompleteSeed.Replace("\"","");
+            attackState.cmd = "Get-ChildItem \"" + pathSeed.Trim() + "*\"";
+            Console.WriteLine(attackState.cmd);
             attackState = Processing.PSExec(attackState);
             return attackState;
         }

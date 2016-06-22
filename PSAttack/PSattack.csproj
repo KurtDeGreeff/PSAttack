@@ -79,6 +79,11 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -108,6 +113,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="app.manifest" />
     <None Include="Get-Attack\get-attack.ps1" />
     <EmbeddedResource Include="Modules\+ndE_JHbf5H2VOZ5PSPXbIqXundGCBW60CoNhXsSmY8=.ps1.enc" />
     <EmbeddedResource Include="Modules\2i5EF6SqRdt05v9rhqQh8G1_vur2i_q0IqBMIN6It6tq_0AiRzjfAN3pyLAEKOrC.ps1.enc" />

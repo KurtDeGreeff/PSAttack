@@ -45,23 +45,24 @@ namespace PSAttack.PSAttackProcessing
                 }
 
                 // route to appropriate autcomplete handler
-                if (attackState.autocompleteSeed.Contains(" -"))
+                attackState.loopType = seedIdentification(attackState.autocompleteSeed);
+                switch (attackState.loopType)
                 {
-                    attackState = paramAutoComplete(attackState);
-                }
-                else if (attackState.autocompleteSeed.Contains("$"))
-                {
-                    attackState = variableAutoComplete(attackState);
-                }
-                else if (attackState.autocompleteSeed.Contains(":") || attackState.autocompleteSeed.Contains("\\"))
-                {
-                    attackState = pathAutoComplete(attackState);
-                }
-                else
-                {
-                    attackState = cmdAutoComplete(attackState);
+                    case "param":
+                        attackState = paramAutoComplete(attackState);
+                        break;
+                    case "variable":
+                        attackState = variableAutoComplete(attackState);
+                        break;
+                    case "path":
+                        attackState = pathAutoComplete(attackState);
+                        break;
+                    default:
+                        attackState = cmdAutoComplete(attackState);
+                        break;
                 }
             }
+
             // If we're already in an autocomplete loop, increment loopPos appropriately
             else if (attackState.loopType != null)
             {
@@ -113,14 +114,44 @@ namespace PSAttack.PSAttackProcessing
             return attackState;
         }
 
+        // This function is used to identify chunks of autocomplete text to determine if it's a variable, path, cmdlet, etc
+        static String seedIdentification(string seed)
+        {
+            string seedType = "cmd";
+            if (seed.Length < 2)
+            {
+                seedType = "unknown";
+            }
+            if (seed.Contains(" -"))
+            {
+                seedType = "param";
+            }
+            else if (seed.Contains("$"))
+            {
+                seedType = "variable";
+            }
+            else if (seed.Contains("\\") || seed.Contains(":"))
+            {
+                seedType = "path";
+            }
+            return seedType;
+        }
+
         // PARAMETER AUTOCOMPLETE
         static AttackState paramAutoComplete(AttackState attackState)
         {
-            attackState.loopType = "param";
             int lastParam = attackState.displayCmd.LastIndexOf(" -");
             string paramSeed = attackState.displayCmd.Substring(lastParam).Replace(" -", "");
-            int firstSpace = attackState.displayCmd.IndexOf(" ");
-            string paramCmd = attackState.displayCmdSeed.Substring(0, firstSpace);
+            String[] displayCmdSeedList = attackState.displayCmdSeed.Split(' ');
+            Array.Reverse(displayCmdSeedList);
+            string result = "";
+            int i = -1;
+            while (result != "cmd")
+            {
+                i += 1;
+                result = seedIdentification(displayCmdSeedList[i]);
+            }
+            string paramCmd = displayCmdSeedList[i];
             attackState.cmd = "(Get-Command " + paramCmd + ").Parameters.Keys | Where{$_ -like '" + paramSeed + "*'}";
             attackState = Processing.PSExec(attackState);
             return attackState;
@@ -129,7 +160,6 @@ namespace PSAttack.PSAttackProcessing
         // VARIABLE AUTOCOMPLETE
         static AttackState variableAutoComplete(AttackState attackState)
         {
-            attackState.loopType = "variable";
             string variableSeed = attackState.autocompleteSeed.Replace("$", "");
             attackState.cmd = "Get-Variable " + variableSeed + "*";
             attackState = Processing.PSExec(attackState);
@@ -139,7 +169,6 @@ namespace PSAttack.PSAttackProcessing
         // PATH AUTOCOMPLETE
         static AttackState pathAutoComplete(AttackState attackState)
         {
-            attackState.loopType = "path";
             string pathSeed = attackState.autocompleteSeed.Replace("\"","");
             attackState.cmd = "Get-ChildItem \"" + pathSeed.Trim() + "*\"";
             Console.WriteLine(attackState.cmd);
@@ -150,7 +179,6 @@ namespace PSAttack.PSAttackProcessing
         // COMMAND AUTOCOMPLETE
         static AttackState cmdAutoComplete(AttackState attackState)
         {
-            attackState.loopType = "cmd";
             attackState.cmd = "Get-Command " + attackState.autocompleteSeed + "*";
             attackState = Processing.PSExec(attackState);
             return attackState;

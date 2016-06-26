@@ -39,9 +39,6 @@ namespace PSAttack.PSAttackProcessing
 
         // absolute cusor position (not accounting for wrapping in the window)
         public int cursorPos { get; set; }
-
-        // cursor offset, 0 is end of line, negative numbers move the cursor backward
-        public int cursorOffset { get; set; }
         
         // loop states
         public string loopType { get; set; }

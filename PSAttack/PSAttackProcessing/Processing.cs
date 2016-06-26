@@ -43,11 +43,11 @@ namespace PSAttack.PSAttackProcessing
             {
                 if (attackState.keyInfo.Key == ConsoleKey.Home)
                 {
-                    attackState.cursorPos = Display.createPrompt(attackState).Length;
+                    attackState.cursorPos = attackState.promptLength;
                 }
                 else
                 {
-                    attackState.cursorPos = Display.createPrompt(attackState).Length + attackState.displayCmd.Length;
+                    attackState.cursorPos = attackState.promptLength + attackState.displayCmd.Length;
                 }
             }
             ////////////////
@@ -113,6 +113,7 @@ namespace PSAttack.PSAttackProcessing
                 else
                 {
                     attackState = Processing.PSExec(attackState);
+                    attackState.displayCmd = "";
                     Display.Output(attackState);
                 }
                 // clear out cmd related stuff from state
@@ -131,17 +132,13 @@ namespace PSAttack.PSAttackProcessing
             else
             {
                 attackState.ClearLoop();
-                attackState.cursorPos += 1;
-                // reset cursorpos if wrap
-                if (attackState.cursorPos >= Console.WindowWidth)
-                {
-                    attackState.cursorPos = attackState.cursorPos - Console.WindowWidth;
-                }
                 // figure out where to insert the typed character
                 List<char> displayCmd = attackState.displayCmd.ToList();
                 int relativeCmdCursorPos = attackState.relativeCmdCursorPos();
-                displayCmd.Insert(attackState.relativeCmdCursorPos() - 1, attackState.keyInfo.KeyChar);
+                int cmdInsertPos = attackState.cursorPos - attackState.promptLength;
+                displayCmd.Insert(attackState.cursorPos - attackState.promptLength, attackState.keyInfo.KeyChar);
                 attackState.displayCmd = new string(displayCmd.ToArray());
+                attackState.cursorPos += 1;
             }
             return attackState;
         }

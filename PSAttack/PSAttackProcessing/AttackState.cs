@@ -37,8 +37,11 @@ namespace PSAttack.PSAttackProcessing
         // The vertical position of the last prompt printed. Used so we know where to start re-writing commands
         public int promptPos { get; set; }
 
-        // cusor position
+        // absolute cusor position (not accounting for wrapping in the window)
         public int cursorPos { get; set; }
+
+        // cursor offset, 0 is end of line, negative numbers move the cursor backward
+        public int cursorOffset { get; set; }
         
         // loop states
         public string loopType { get; set; }
@@ -55,16 +58,18 @@ namespace PSAttack.PSAttackProcessing
         // used to store command history
         public List<string> history { get; set; }
 
+        public int promptLength { get; set; }
+
         // returns total length of display cmd + prompt. Used to check for text wrap in 
         // so we know what to do with our cursor
         public int totalDisplayLength()
         {
-            return Display.createPrompt(this).Length + this.displayCmd.Length;
+            return this.promptLength + this.displayCmd.Length;
         }
 
         public int consoleWrapCount()
         {
-            return Console.CursorTop - this.promptPos;
+            return this.totalDisplayLength() / Console.WindowWidth;
         }
 
         // return cursor pos ignoring window wrapping
@@ -73,7 +78,7 @@ namespace PSAttack.PSAttackProcessing
             int wrapCount = this.consoleWrapCount();
             if (wrapCount > 0)
             {
-                return this.cursorPos + Console.WindowWidth * wrapCount;
+                return this.cursorPos + Console.WindowWidth* wrapCount;
             }
             return this.cursorPos;
         }
@@ -81,14 +86,34 @@ namespace PSAttack.PSAttackProcessing
         // return relative cusor pos without prompt
         public int relativeCmdCursorPos()
         {
-            int promptLength = Display.createPrompt(this).Length;
-            return this.relativeCursorPos() - promptLength;
+            List<int> cursorXY = this.getCursorXY();
+            return this.cursorPos - this.promptLength;
+        }
+
+        // This is used to figure out where the cursor should be placed, accounting for line
+        // wraps in the command and where the prompt is
+        public List<int> getCursorXY()
+        {
+            // figure out if we've dropped down a line
+            int cursorYDiff = this.cursorPos / Console.WindowWidth;
+            int cursorY = this.promptPos + this.cursorPos / Console.WindowWidth;
+            int cursorX = this.cursorPos - Console.WindowWidth * cursorYDiff;
+
+            // if X is < 0, set cursor to end of line
+            if (cursorX < 0) {
+                cursorX = Console.WindowWidth - 1;
+            }
+            List<int> cursorXY = new List<int>();
+            cursorXY.Add(cursorX);
+            cursorXY.Add(cursorY);
+            return cursorXY;
+
         }
 
         // return end of displayCmd accounting for prompt
         public int endOfDisplayCmdPos()
         {
-            return Display.createPrompt(this).Length + this.displayCmd.Length;
+            return this.promptLength + this.displayCmd.Length;
         }
 
         // clear out cruft from autocomplete loops

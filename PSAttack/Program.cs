@@ -24,7 +24,7 @@ namespace PSAttack
 
             // create attackState
             AttackState attackState = new AttackState();
-            attackState.cursorPos = Display.createPrompt(attackState).Length;
+            attackState.cursorPos = attackState.promptLength;
 
             // AMSI bypass care of @mattifestion (https://twitter.com/mattifestation/status/735261120487772160)
             if (Environment.OSVersion.Version.Major > 9)

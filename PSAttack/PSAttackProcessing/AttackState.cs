@@ -8,8 +8,17 @@ using System.Management.Automation.Runspaces;
 using PSAttack.PSAttackShell;
 using PSAttack.Utils;
 
+
 namespace PSAttack.PSAttackProcessing
 {
+    // This item is used to keep track of the various components on the command line
+    public class DisplayCmdComponent
+    {
+        public int Index { get; set; }
+        public string Contents { get; set; }
+        public string Type { get; set; }
+    }
+
     class AttackState
     {
         // Powershell runsapce and host
@@ -56,6 +65,12 @@ namespace PSAttack.PSAttackProcessing
         public List<string> history { get; set; }
 
         public int promptLength { get; set; }
+
+        // used to store list of command components and their types
+        public List<DisplayCmdComponent> cmdComponents { get; set; }
+
+        // used to store index of command compnotent being auto-completed.
+        public int cmdComponentsIndex { get; set; }
 
         // returns total length of display cmd + prompt. Used to check for text wrap in 
         // so we know what to do with our cursor
@@ -121,6 +136,8 @@ namespace PSAttack.PSAttackProcessing
             this.autocompleteSeed = null;
             this.displayCmdSeed = null;
             this.loopPos = 0;
+            this.cmdComponents = null;
+            this.cmdComponentsIndex = -1;
         }
 
         // clear out cruft from working with commands

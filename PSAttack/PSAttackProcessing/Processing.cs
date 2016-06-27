@@ -66,6 +66,8 @@ namespace PSAttack.PSAttackProcessing
             {
                 if (attackState.relativeCmdCursorPos() > 0)
                 {
+
+                    attackState.ClearLoop();
                     attackState.cursorPos -= 1;
                 }
                 return attackState;
@@ -74,6 +76,8 @@ namespace PSAttack.PSAttackProcessing
             {
                 if (attackState.relativeCmdCursorPos() < attackState.displayCmd.Length)
                 {
+
+                    attackState.ClearLoop();
                     attackState.cursorPos += 1;
                 }
                 return attackState;
@@ -83,7 +87,7 @@ namespace PSAttack.PSAttackProcessing
             ///////////
             else if (attackState.keyInfo.Key == ConsoleKey.Enter)
             {
-                Console.WriteLine("\n");
+                Console.WriteLine();
                 attackState.ClearLoop();
                 attackState.cmd = attackState.displayCmd;
                 // don't add blank lines to history

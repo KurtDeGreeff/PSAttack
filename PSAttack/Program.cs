@@ -36,7 +36,7 @@ namespace PSAttack
                 }
                 catch
                 {
-                    Console.Write("Could not run AMSI bypass.");
+                    Console.WriteLine("Could not run AMSI bypass.");
                 }
             }
 

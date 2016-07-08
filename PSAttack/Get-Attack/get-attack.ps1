@@ -139,7 +139,8 @@ Kevin-Robertson\Inveigh\Inveigh.ps1,Watch-Inveigh,Recon; Passwords,Watch-Inveigh
 Powercat\Powercat.ps1,Powercat,Recon; Exfiltration; Backdoors,Netcat - The Powershell Version
 jaredhaight\Invoke-MetasploitPayload.ps1,Invoke-MetasploitPayload,Backdoor;Execution;Escalation,Downloads and runs a Metasploit Payload via the Metasploit Web Delivery Module.
 Kevin-Robertson\Tater\Tater.ps1,Invoke-Tater,Escalation,Uses the "Hot Potato" exploit to escalate privileges.
-FuzzySecurity\PowerShell-Suite\Invoke-MS16-032.ps1,Invoke-MS16-032,Escalation,Exploits MS16-032 to spawn a cmd prompt running as SYSTEM.'
+FuzzySecurity\PowerShell-Suite\Invoke-MS16-032.ps1,Invoke-MS16-032,Escalation,Exploits MS16-032 to spawn a cmd prompt running as SYSTEM.
+putterpanda\mimikittenz\Invoke-mimikittenz.ps1,Invoke-mimikittenz,Passwords,Utilizes Windows function ReadProcessMemory() to extract juicy information from target processes memory using regex.'
 
     Write-Verbose "Checking Attacks.."
     try {

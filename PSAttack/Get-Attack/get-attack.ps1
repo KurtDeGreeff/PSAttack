@@ -158,7 +158,7 @@ putterpanda\mimikittenz\Invoke-mimikittenz.ps1,Invoke-mimikittenz,Passwords,Util
 	if ($term) 
 	{
 		Write-Verbose "Searching Attacks for $term.."
-		$results = $attacks | Where-Object {$_.Description -like "*" + $term + "*" -or $_.Type -like "*" + $term + "*"}
+		$results = $attacks | Where-Object {$_.Description -like "*" + $term + "*" -or $_.Type -like "*" + $term + "*" -or $_.Command -like "*" + $term + "*"}
 		return $results | format-list
 	}
 	else

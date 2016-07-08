@@ -7,7 +7,7 @@ namespace PSAttack
 {
     class Strings
     {
-        public static string version = "1.4";
+        public static string version = "1.4.1";
         public static string windowTitle = "PSAttack!!";
         public static List<string> psaLogos = new List<string>() {
 @"

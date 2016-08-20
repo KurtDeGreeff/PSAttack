@@ -97,6 +97,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Include="PSAttackProcessing\TabExpansion.cs" />
     <Compile Include="PSAttackShell\PSColors.cs" />
     <Compile Include="Utils\Display.cs" />
@@ -141,6 +146,10 @@
     <EmbeddedResource Include="Modules\TxJD+TVqYVhVvYuds87VoQ==.ps1.enc" />
     <EmbeddedResource Include="Modules\w31jsJ_90AZVk5dKpPsyynXgotI+AC3K03p55HLo744=.ps1.enc" />
     <EmbeddedResource Include="Modules\yTyNbh6p9TA6CrIz7zv3pnM0zWx1n4wpNWq2L_1p6rWT0E2YFsG9uSladGsZKxBu.ps1.enc" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\attackDate.txt" />
@@ -149,7 +158,6 @@
     <EmbeddedResource Include="Resources\BuildDate.txt" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Modules\key.txt" />
     <Content Include="punch_icon.ico" />
   </ItemGroup>
   <ItemGroup>

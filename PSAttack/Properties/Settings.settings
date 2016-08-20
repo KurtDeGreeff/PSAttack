@@ -8,5 +8,8 @@
     <Setting Name="valueStore" Type="System.String" Scope="Application">
       <Value Profile="(Default)">\ENCRYPTEDCSV</Value>
     </Setting>
+    <Setting Name="encFileExtension" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">PSAENC</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

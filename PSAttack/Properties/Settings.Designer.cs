@@ -40,5 +40,14 @@ namespace PSAttack.Properties {
                 return ((string)(this["valueStore"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("PSAENC")]
+        public string encFileExtension {
+            get {
+                return ((string)(this["encFileExtension"]));
+            }
+        }
     }
 }

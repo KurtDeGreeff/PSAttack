@@ -66,8 +66,9 @@ namespace PSAttack.PSAttackProcessing
 
         public int promptLength { get; set; }
 
-        // dict of generatedKeys
-        public Dictionary<string,string> generatedKeys { get; set; }
+        // When PSAttack is built an encrypted CSV is generated containing data that we 
+        // don't want to touch disk. That data is stored here as a dict 
+        public Dictionary<string,string> decryptedStore { get; set; }
 
         // used to store list of command components and their types
         public List<DisplayCmdComponent> cmdComponents { get; set; }
@@ -160,7 +161,7 @@ namespace PSAttack.PSAttackProcessing
         {
             // init host and runspace
             this.host = new PSAttackHost();
-            this.generatedKeys = new Dictionary<string, string>();
+            this.decryptedStore = new Dictionary<string, string>();
             Runspace runspace = RunspaceFactory.CreateRunspace(this.host);
             runspace.Open();
             this.runspace = runspace;

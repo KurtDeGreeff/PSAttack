@@ -44,7 +44,7 @@ namespace PSAttack
                 }
             }
 
-            // amsi bypass (thanks matt!)
+            // amsi bypass (thanks matt!!)
             if (Environment.OSVersion.Version.Major > 9)
             {
                 try
@@ -59,7 +59,6 @@ namespace PSAttack
             }
 
             // Decrypt modules
-            
             string[] resources = assembly.GetManifestResourceNames();
             foreach (string resource in resources)
             {

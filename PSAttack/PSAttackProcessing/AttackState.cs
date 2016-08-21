@@ -161,12 +161,11 @@ namespace PSAttack.PSAttackProcessing
         {
             // init host and runspace
             this.host = new PSAttackHost();
-            this.decryptedStore = new Dictionary<string, string>();
             Runspace runspace = RunspaceFactory.CreateRunspace(this.host);
             runspace.Open();
             this.runspace = runspace;
-            // init history
             this.history = new List<string>();
+            this.decryptedStore = new Dictionary<string, string>();
             // hack to keep cmd from being null. others parts of psa don't appreciate that.
             this.cmd = "";
             this.displayCmd = "";

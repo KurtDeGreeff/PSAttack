@@ -73,8 +73,6 @@ namespace PSAttack
                     PSAUtils.ImportModules(attackState, moduleStream);
                 }
             }
-            Console.ReadLine();
-
             // Setup PS env
             attackState.cmd = attackState.decryptedStore["setExecutionPolicy"];
             Processing.PSExec(attackState);

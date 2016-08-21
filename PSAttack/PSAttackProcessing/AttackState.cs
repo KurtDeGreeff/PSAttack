@@ -66,6 +66,9 @@ namespace PSAttack.PSAttackProcessing
 
         public int promptLength { get; set; }
 
+        // dict of generatedKeys
+        public Dictionary<string,string> generatedKeys { get; set; }
+
         // used to store list of command components and their types
         public List<DisplayCmdComponent> cmdComponents { get; set; }
 
@@ -157,6 +160,7 @@ namespace PSAttack.PSAttackProcessing
         {
             // init host and runspace
             this.host = new PSAttackHost();
+            this.generatedKeys = new Dictionary<string, string>();
             Runspace runspace = RunspaceFactory.CreateRunspace(this.host);
             runspace.Open();
             this.runspace = runspace;

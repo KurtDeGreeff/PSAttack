@@ -22,16 +22,27 @@ namespace PSAttack
             Console.WriteLine(Strings.psaLogos[pspLogoInt]);
             Console.WriteLine("PS>Attack is loading...");
 
-            // Get Encrypted Values
-            Assembly assembly = Assembly.GetExecutingAssembly();
-            MemoryStream valueStore = CryptoUtils.DecryptFile(assembly.GetManifestResourceStream(Properties.Settings.Default.valueStore));
-            string valueStoreStr = Encoding.Unicode.GetString(valueStore.ToArray());
-            Console.WriteLine(valueStoreStr);
-            Console.ReadLine();
-
             // create attackState
             AttackState attackState = new AttackState();
             attackState.cursorPos = attackState.promptLength;
+
+
+            // Get Encrypted Values
+            Assembly assembly = Assembly.GetExecutingAssembly();
+            Stream valueStream = assembly.GetManifestResourceStream("PSAttack.Resources." + Properties.Settings.Default.valueStore);
+            MemoryStream valueStore = CryptoUtils.DecryptFile(valueStream);
+            string valueStoreStr = Encoding.Unicode.GetString(valueStore.ToArray());
+
+            string[] valuePairs = valueStoreStr.Replace("\r","").Split('\n');
+
+            foreach (string value in valuePairs)
+            {
+                if (value != "")
+                {
+                    string[] entry = value.Split(',');
+                    attackState.generatedKeys.Add(entry[0], entry[1]);
+                }
+            }
 
             // amsi bypass (thanks matt!)
             if (Environment.OSVersion.Version.Major > 9)
@@ -52,9 +63,9 @@ namespace PSAttack
             string[] resources = assembly.GetManifestResourceNames();
             foreach (string resource in resources)
             {
-                if (resource.Contains(".enc"))
+                if (resource.Contains(attackState.generatedKeys["encFileExtension"]))
                 {
-                    string fileName = resource.Replace("PSAttack.Modules.","").Replace(".ps1.enc","");
+                    string fileName = resource.Replace("PSAttack.Modules.","").Replace("." + attackState.generatedKeys["encFileExtension"], "");
                     string decFilename = CryptoUtils.DecryptString(fileName);
                     Console.ForegroundColor = PSColors.loadingText;
                     Console.WriteLine("Decrypting: " + decFilename);

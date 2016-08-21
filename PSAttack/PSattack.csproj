@@ -14,78 +14,53 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
-    <PublishUrl>publish\</PublishUrl>
-    <Install>true</Install>
-    <InstallFrom>Disk</InstallFrom>
-    <UpdateEnabled>false</UpdateEnabled>
-    <UpdateMode>Foreground</UpdateMode>
-    <UpdateInterval>7</UpdateInterval>
-    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
-    <UpdatePeriodically>false</UpdatePeriodically>
-    <UpdateRequired>false</UpdateRequired>
-    <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
-    <UseApplicationTrust>false</UseApplicationTrust>
-    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\Debug\x64\</OutputPath>
+    <OutputPath>bin\x64\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <DebugType>full</DebugType>
     <PlatformTarget>x64</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>false</Prefer32Bit>
-    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
-    <Optimize>false</Optimize>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
-    <OutputPath>bin\Release\x64\</OutputPath>
+    <OutputPath>bin\x64\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <Optimize>true</Optimize>
-    <DebugType>none</DebugType>
+    <DebugType>pdbonly</DebugType>
     <PlatformTarget>x64</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>true</Prefer32Bit>
-    <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject />
   </PropertyGroup>
   <PropertyGroup />
   <PropertyGroup />
-  <PropertyGroup>
-    <ApplicationIcon>punch_icon.ico</ApplicationIcon>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\Debug\x86\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <DebugType>full</DebugType>
-    <PlatformTarget>x86</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
-    <OutputPath>bin\Release\x86\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <Optimize>true</Optimize>
-    <DebugType>none</DebugType>
-    <PlatformTarget>x86</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-    <Prefer32Bit>true</Prefer32Bit>
-    <UseVSHostingProcess>false</UseVSHostingProcess>
-  </PropertyGroup>
-  <PropertyGroup />
-  <PropertyGroup />
-  <PropertyGroup>
-    <ApplicationManifest>app.manifest</ApplicationManifest>
-  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -119,37 +94,34 @@
     <Compile Include="Utils\PSAUtils.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
-    <None Include="app.manifest" />
-    <None Include="Get-Attack\get-attack.ps1" />
-    <EmbeddedResource Include="Modules\0dBVepb7F_YiDZCeeplYg4SyX20sqMExb1canWnWwXR5i6CGn9+yGsRM3N8x7YFX.ps1.enc" />
-    <EmbeddedResource Include="Modules\1nOb5fVdnBUpyz9gE2gSEoo2YM_D_BigHlsgOriuqwZJep0fIL6kPX8v6BayG5+k.ps1.enc" />
-    <EmbeddedResource Include="Modules\8pseMTYD0PljHfSq+EpDHeui2bMf0+38p9tkjUzm+to=.ps1.enc" />
-    <EmbeddedResource Include="Modules\9KfSlNIycXpm2ALkZrwUdTmeNBhSdN6D8yEEcQRl+NQ=.ps1.enc" />
-    <EmbeddedResource Include="Modules\aIfj0m7xnyl1_RoBEITWaig0p8Y0wlZvEEYDbr7DvBQ=.ps1.enc" />
-    <EmbeddedResource Include="Modules\aigG4Fsdx7avco9ncY4S86dCId_GGAGf8TBGBppfVQM5Pe42xZnT1AT8dcxJNBEA.ps1.enc" />
-    <EmbeddedResource Include="Modules\azqU8IfNjAvAqoTiICyfZRCKIyML29kxEQVoTp9One0=.ps1.enc" />
-    <EmbeddedResource Include="Modules\dIaER8kzd4gx2XhQtzm4wQ==.ps1.enc" />
-    <EmbeddedResource Include="Modules\FQUm7aO505lg_Try1OM5R_P1fpJOVvGXFkuvxUBewbs=.ps1.enc" />
-    <EmbeddedResource Include="Modules\FwjgR2aBTuT+El7yuXvTRo2oRYd78YzhS7yc1UEtdv0=.ps1.enc" />
-    <EmbeddedResource Include="Modules\iepofgzK0U6wqGvle4Mf9EHWgGW0+PUK2SQwfFdDWiE=.ps1.enc" />
-    <EmbeddedResource Include="Modules\iSMlR1KsI9MIvfrxP3jcx2XT_3jN+_Uh3e8rmEQvaBOhQdw+Vdv7QAWUuDPHB6Br5rrcKbKl7sZaxiRu3B_5qw==.ps1.enc" />
-    <EmbeddedResource Include="Modules\iSMlR1KsI9MIvfrxP3jcxz4az147DwT1+IA1_39zs3M5mGG_rfdbARLodGQV1tjS.ps1.enc" />
-    <EmbeddedResource Include="Modules\iSMlR1KsI9MIvfrxP3jcx_eo171EO3p6348SqKu4Epg=.ps1.enc" />
-    <EmbeddedResource Include="Modules\iSMlR1KsI9MIvfrxP3jcx_MJYPWkhXHJCk2eAWYzR5E=.ps1.enc" />
-    <EmbeddedResource Include="Modules\JB2CH6ANVimveAG9U1GonWSi2+NLqtpZYGqE3g0RjaM=.ps1.enc" />
-    <EmbeddedResource Include="Modules\K1f2jiEtkzZsEmDUJiVXH+oLTXYuprP6ZIFRgYKxumNWORifi9sp1fd+lXjAvmyk.ps1.enc" />
-    <EmbeddedResource Include="Modules\LYVbCVZ4IqQZufM0EmufSLYVsmtUnSwT51DQRwrOn9sAky9lT7VLh7ZaQbzkXmV9.ps1.enc" />
-    <EmbeddedResource Include="Modules\Nx3FM0fBkvsyMFJqWY+cE0aOyRz25nQAPCgn1eajoQ8=.ps1.enc" />
-    <EmbeddedResource Include="Modules\oCx0qc0xLlyLyPCpOi+wKQFGdO7MVLRlzd+o8t+yJbE=.ps1.enc" />
-    <EmbeddedResource Include="Modules\Rrs7rF3jV8m64kgYs8rFZg==.ps1.enc" />
-    <EmbeddedResource Include="Modules\TxJD+TVqYVhVvYuds87VoQ==.ps1.enc" />
-    <EmbeddedResource Include="Modules\w31jsJ_90AZVk5dKpPsyynXgotI+AC3K03p55HLo744=.ps1.enc" />
-    <EmbeddedResource Include="Modules\yTyNbh6p9TA6CrIz7zv3pnM0zWx1n4wpNWq2L_1p6rWT0E2YFsG9uSladGsZKxBu.ps1.enc" />
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
     </None>
+    <EmbeddedResource Include="Modules\NSCS6gdEdFO+jicOk+wpnO37x2qsD3rewKWhdShEdVY=.MdLCt" />
+    <EmbeddedResource Include="Modules\WfYLOpkzKZ9lWWYyetcGnjSmYNMJeVBezK5DRhtXXoSToPqJdLGUebjqEois8b+d.MdLCt" />
+    <EmbeddedResource Include="Modules\0CiGGnh7JBZ1qO64m_bxpRqQbN0w7xl3HQpwtg0Tnf4LExLQXU7Tm5lslI04WwsZ.MdLCt" />
+    <EmbeddedResource Include="Modules\ii40CKgLHOt1q+t41BXWB9DxUZq+5piN9YGJcyjhO3t6w1_UBds1_BSAWRcPyKNB.MdLCt" />
+    <EmbeddedResource Include="Modules\1lCyHHnHekHiE4OLkxf43ZVUXr3gnb0PAGMqdsLNf2A=.MdLCt" />
+    <EmbeddedResource Include="Modules\n5KoTRlG+Qo1W_lsRO3rLg==.MdLCt" />
+    <EmbeddedResource Include="Modules\bQTEnfuLvhLOlDnfJH9F4EJ66BGD2GrW+GftiUBE2bw=.MdLCt" />
+    <EmbeddedResource Include="Modules\5kQKbDMNo++AqZ5Y1cCTGH1a7ekJyrkot7bSR6LIGA732QACaNm+LETlmzxFqJFp.MdLCt" />
+    <EmbeddedResource Include="Modules\L_9trDhSxTwxeUfygaZ3558I4Uu568oJ+Z8N41ulSvta+hYkO7dkbmQsbSVf9XTm.MdLCt" />
+    <EmbeddedResource Include="Modules\Q7uZbnuV4RHD8YdUxALX64kdlNGYayHvDPuDWgoNcS0sU+pEsXrpSqOTCMpnmuZ3.MdLCt" />
+    <EmbeddedResource Include="Modules\jtLyFw2P+mn4smY6umlpSDj85axfOS4yqjuhmSs8ikE=.MdLCt" />
+    <EmbeddedResource Include="Modules\De0U6EzHIC1EVnPM2+3n6W0ihV53lFBj+2C94BuNbZ8=.MdLCt" />
+    <EmbeddedResource Include="Modules\+rPmT7vMOtmYwIgYVz0dBwnkPVvO9xzTdquaxKw2C50=.MdLCt" />
+    <EmbeddedResource Include="Modules\1AqR3O1IBLzQa+8qxJGXebBc7BZD2HapBFYG12zOVOE=.MdLCt" />
+    <EmbeddedResource Include="Modules\wErQ9iUGSY9dJTSyowuc22emz3ONISVxAccrBdnKcas=.MdLCt" />
+    <EmbeddedResource Include="Modules\4v9uhBbT75xEpcv97PQVVp6xzpNzMVJvohJBvoTu+Cs=.MdLCt" />
+    <EmbeddedResource Include="Modules\FTrikmSwRvRxNG5vDTyPjyQvCG53ni0wocwAhZAK4Ak=.MdLCt" />
+    <EmbeddedResource Include="Modules\CO_dtXfW7VXD9BM29wtN4_LdFpqbL1FpxAcuTdrrUnA=.MdLCt" />
+    <EmbeddedResource Include="Modules\+6OihdbyHJctSzcj_PkMIg==.MdLCt" />
+    <EmbeddedResource Include="Modules\8s3Ss7DZH6Ymrg_aUWQsAT_+mV18tmZhfbjo0Uz1V5I=.MdLCt" />
+    <EmbeddedResource Include="Modules\NSCS6gdEdFO+jicOk+wpnNnehXAltBw_KN7YSCy0GXNMOY3r47ruklu60d7dx4WTQU0TXjEMZTk90ks8St9X5g==.MdLCt" />
+    <EmbeddedResource Include="Modules\IiVUuftWoWeKWleD9KV2fA==.MdLCt" />
+    <EmbeddedResource Include="Modules\NSCS6gdEdFO+jicOk+wpnJJNneYhw76DSizhmBbK2ic=.MdLCt" />
+    <EmbeddedResource Include="Modules\NSCS6gdEdFO+jicOk+wpnOEkuPuDow+dHwSkxLihk8qMXrlR5d1a+0I6lDzhJ3ls.MdLCt" />
+    <EmbeddedResource Include="Resources\yxJFOHdFmAkkamESwoSECHyuzHtYJRfCtVUxbVQqahnAQnPAUGSdBnkqyOGHNFvU" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\attackDate.txt" />
@@ -157,17 +129,6 @@
   <ItemGroup>
     <EmbeddedResource Include="Resources\BuildDate.txt" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="punch_icon.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
-  </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>powershell -command "write-host (get-date -Format D) at (get-date -Format T)" &gt; "$(ProjectDir)\Resources\BuildDate.txt"</PreBuildEvent>

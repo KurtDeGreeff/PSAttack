@@ -49,6 +49,8 @@ namespace PSAttack
             {
                 try
                 {
+                    Console.WriteLine("Runnign AMSI Bypass: {0}", attackState.decryptedStore["amsiBypass"]);
+                    Console.ReadLine();
                     attackState.cmd = attackState.decryptedStore["amsiBypass"];
                     Processing.PSExec(attackState);
                 }

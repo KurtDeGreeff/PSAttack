@@ -16,7 +16,7 @@
     </TargetFrameworkProfile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>x86</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -27,7 +27,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>x86</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>none</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\x86\</OutputPath>
@@ -98,36 +98,31 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <EmbeddedResource Include="Modules\U43YAkLAExG1zk4IkUhs+LImy3CbsIXvc9B8E9GG4GQ=" />
-    <EmbeddedResource Include="Modules\H5gc8+goUq9tMA3yl28QctpWkkKWHSxPXquaWaCfuwD2UYd+WXUPXykJi8eYHnby" />
-    <EmbeddedResource Include="Modules\I3u4KXQ3TVMN93GfG+Cffk7uTD_cJ6wWY9cIa52emTxoMYbaqWUBZwtEfnhCXbVB" />
-    <EmbeddedResource Include="Modules\eibLAnEwFZdl4TD2+i3pgkMkOT8fmNpaZs3wY9c0_rV3JBcMBsqGsAhs5LDNwfOF" />
-    <EmbeddedResource Include="Modules\4wAPXzYLdmBtXdGKStujnhybEfdz3XPbZFhcfILkmBg=" />
-    <EmbeddedResource Include="Modules\Q3rZWSzi_SO3PmlytLwScg==" />
-    <EmbeddedResource Include="Modules\eZBdqFAsLPVHTkKkxMLX84Ngh21Rkxf+7+x+xuk1IFQ=" />
-    <EmbeddedResource Include="Modules\20eR7OUC7u+3a2c+mwlf4oc95J+1lxWL+yv3Lu5siZ4+sHr725sR3O9SPDPOeUln" />
-    <EmbeddedResource Include="Modules\sr5wGif_SEfBooT_Gi_NKHV1zSJpQ4LnZ9xffeYpeQDqxViwdUfHyqdf9bt5LVRs" />
-    <EmbeddedResource Include="Modules\JT74ONgR_0KPEfZo3g0I5LZ5+IfXZzeW0Z+K2reBtAJBFPBZivovvf1nMOd7+JD9" />
-    <EmbeddedResource Include="Modules\HNggzTJkKlpGlYIwYpKVh2VhGwtbUPgp6VxDn0S7Xrs=" />
-    <EmbeddedResource Include="Modules\stMf93U6_enZLTtCBSjVOeCxMX5R1T4oGh_BM8G2L0s=" />
-    <EmbeddedResource Include="Modules\F45XeRdPYPx1kGsS9szGgopDPfWr3tJH1aVydmcnPUI=" />
-    <EmbeddedResource Include="Modules\WFuuKLavPMyqEmSWyT7T6IC_rGCT2_IjjTGmj4q+Sbs=" />
-    <EmbeddedResource Include="Modules\NI9zWgtE5+Q1FMTbct+3CCGWNuTGWi9+bA91OX3U0+I=" />
-    <EmbeddedResource Include="Modules\ECodTcQ5YokAzbxc1SH4EmhXd1ipbkzmvd+CAv3cyy0=" />
-    <EmbeddedResource Include="Modules\ICUDQPX0uHklUqLGh8KrRUv5CI42LLMqhvZ379IVn+g=" />
-    <EmbeddedResource Include="Modules\WecffDoduqDYpcjqB5t4RlojXfsd0OKqyh_Mji5dHmI=" />
-    <EmbeddedResource Include="Modules\mMBlsl3qTPst2OohE0pfSw==" />
-    <EmbeddedResource Include="Modules\fZbTB1j0GfyhflxU8XwjQpF4F0vlcvCpDhZXiErdgl0=" />
-    <EmbeddedResource Include="Modules\U43YAkLAExG1zk4IkUhs+A2YwO7ggWqE82P_t+lZeofpaNBEkOFazG6rDERvtYAuA1+6_0B0XV3oLlAYUE0sGQ==" />
-    <EmbeddedResource Include="Modules\YWRoOq95Tv7+7nN_T4tESw==" />
-    <EmbeddedResource Include="Modules\U43YAkLAExG1zk4IkUhs+E+7c9eIzgAyPi_ibik7v8c=" />
-    <EmbeddedResource Include="Modules\U43YAkLAExG1zk4IkUhs+HbXxEYiSrpjZhrh7YMpdi7RW2U7TNPXome_7glg8M8L" />
-    <EmbeddedResource Include="Resources\KexMnyvBHcpAfniIdwPEXIgPdlxiUNMrYkSMrnXcdVOYYeoscIbuQssBxijBANhu" />
-    <None Include="app.manifest" />
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
+    <EmbeddedResource Include="Modules\JtjNwAtkFhlsiB6L6v2QF4CkZyMvz3kZLTLhnrP9_ZE=" />
+    <EmbeddedResource Include="Modules\PYu9vrVtpcThs5P40drE0gMAFWPFVA0B9vh2J28ysvqepC8gdrwH7EWDEBTZe8gh" />
+    <EmbeddedResource Include="Modules\aTRSSZ_bCwJSLONWYKgYdpBFWYmWvCKUzwCjnteCH+iNS6+k4ZTM_V1K8otkIVpl" />
+    <EmbeddedResource Include="Modules\Ppc6t2WRCgau4dUCezhFjpccuwgCC1+mHi78A2wwyMWV9cDNSCaU8Oz0z66I3hia" />
+    <EmbeddedResource Include="Modules\x5j7+f3Nj1j7RgrU5nIH7JXq5RUbNYEPO+AJ8T6kOuk=" />
+    <EmbeddedResource Include="Modules\KnMo7hH8x9A2aGRbahW7vA==" />
+    <EmbeddedResource Include="Modules\ktRiVCAPnK8i+HdCyWAMtHVIM9iteCWdjkZuJspTpT4=" />
+    <EmbeddedResource Include="Modules\SwX6bKtoFh9ZRJ5edZ4spQC5DFn9DQ_lx1WuERRme0GENUSTRwKmLy1SFKdKt45Y" />
+    <EmbeddedResource Include="Modules\Y+fNz0ScPXcnAbs5Kby9VYZ0hi5fXIr+wbE9Z8ths5Xsd8LOdYON9acmhUoasVGf" />
+    <EmbeddedResource Include="Modules\o0fzhwuL35iVhI_Q78IbJK3OQmK92eBiUcTRYpbpMp81gVzlolUPyo5OFnFqQGNm" />
+    <EmbeddedResource Include="Modules\IXFVlCfn8x6yoCH36huTOo+PQHJh6cGIa5xIchlfxVA=" />
+    <EmbeddedResource Include="Modules\keJ65EuJix5epbwpagAotySo4k6M2i1Pyt5rFn3ZD+4=" />
+    <EmbeddedResource Include="Modules\6PKFNhzKpn_pIRSoYGl7HgRJHYRtDLrZBpyMaGL8yOo=" />
+    <EmbeddedResource Include="Modules\nHWelOT6uNPLw7auwZZgkFH8EkiTWvZFpfHPAZXHObQ=" />
+    <EmbeddedResource Include="Modules\wHEMAIMlr_J8eu6fLfEhI5Y5TmdcDussJXadW48r0O8=" />
+    <EmbeddedResource Include="Modules\51IA2HQoAeclxVWrTHnx8Nhzgqpi28wv0YAjdJCxz4k=" />
+    <EmbeddedResource Include="Modules\u35VtoTKuF4PyBSGYcHrQezEYWm5Kb18J8CTUibKNZc=" />
+    <EmbeddedResource Include="Modules\MHFk4WY9QboxZ7aFI8xmAlZHVylUkiHWlCYz8iH0dxk=" />
+    <EmbeddedResource Include="Modules\KwHHR2cfsBxCFdo7iJPpvw==" />
+    <EmbeddedResource Include="Modules\hFhVYXpenzjD2n4GICNB79lGyCGYGlR1sOdbt8SwSH8=" />
+    <EmbeddedResource Include="Modules\JtjNwAtkFhlsiB6L6v2QF9QGjDgDfCLC9Q3gTSH1qw8jjETf8X_gcodpfGnSrf1wHB3nTsHVwHvCU6V4kqPXZQ==" />
+    <EmbeddedResource Include="Modules\pcblYU1j66J9j9SZ7MckUA==" />
+    <EmbeddedResource Include="Modules\JtjNwAtkFhlsiB6L6v2QF1GD0Sn17gJdqtMBRhI3o3w=" />
+    <EmbeddedResource Include="Modules\JtjNwAtkFhlsiB6L6v2QFz+PyCyckm1DtrAzndrnAYLRP6q7DIiiJ5IvJzKuZtK+" />
+    <EmbeddedResource Include="Resources\KfXEtnalQFpeXtfJLMfAzLiiwpkfWPFUZrKKPoYwEkfKphsdTeAGIPlywoIDCuPA" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\attackDate.txt" />

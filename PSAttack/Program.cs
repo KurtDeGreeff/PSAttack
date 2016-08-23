@@ -39,7 +39,7 @@ namespace PSAttack
             {
                 if (value != "")
                 {
-                    string[] entry = value.Split(',');
+                    string[] entry = value.Split('|');
                     attackState.decryptedStore.Add(entry[0], entry[1]);
                 }
             }

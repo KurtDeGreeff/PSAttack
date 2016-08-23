@@ -45,13 +45,10 @@ namespace PSAttack
             }
 
             // amsi bypass (thanks matt!!)
-            Console.WriteLine("OS: {0}", Environment.OSVersion.Version.Major);
             if (Environment.OSVersion.Version.Major > 9)
             {
                 try
                 {
-                    Console.WriteLine("Runnign AMSI Bypass: {0}", attackState.decryptedStore["amsiBypass"]);
-                    Console.ReadLine();
                     attackState.cmd = attackState.decryptedStore["amsiBypass"];
                     Processing.PSExec(attackState);
                 }

@@ -45,6 +45,7 @@ namespace PSAttack
             }
 
             // amsi bypass (thanks matt!!)
+            Console.WriteLine("OS: {0}", Environment.OSVersion.Version.Major);
             if (Environment.OSVersion.Version.Major > 9)
             {
                 try

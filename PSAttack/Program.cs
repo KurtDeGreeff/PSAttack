@@ -104,13 +104,15 @@ namespace PSAttack
             string buildString;
             string attackDate = new StreamReader(assembly.GetManifestResourceStream("PSAttack.Resources.attackDate.txt")).ReadToEnd();
             Boolean builtWithBuildTool = true;
-            if (attackDate.Length > 12)
+            string buildDate = new StreamReader(assembly.GetManifestResourceStream("PSAttack.Resources.BuildDate.txt")).ReadToEnd();
+            DateTime storedBuildDate = Convert.ToDateTime(attackState.decryptedStore["buildDate"]);
+            DateTime textBuildDate = Convert.ToDateTime(buildDate);
+            if (storedBuildDate > textBuildDate)
             {                
                 buildString = "It was custom made by the PS>Attack Build Tool on " + attackDate + "\n"; 
             }
             else
             {
-                string buildDate = new StreamReader(assembly.GetManifestResourceStream("PSAttack.Resources.BuildDate.txt")).ReadToEnd();
                 buildString = "It was built on " + buildDate + "\nIf you'd like a version of PS>Attack thats even harder for AV \nto detect checkout http://github.com/jaredhaight/PSAttackBuildTool \n";
                 builtWithBuildTool = false;
             }
@@ -141,15 +143,23 @@ namespace PSAttack
             return attackState;
         }
 
+        public class Start
+        {
+            public static void launchPSAttack()
+            {
+                AttackState attackState = PSInit();
+                while (true)
+                {
+                    attackState.keyInfo = Console.ReadKey();
+                    attackState = Processing.CommandProcessor(attackState);
+                    Display.Output(attackState);
+                }
+            }
+        }
+
         static void Main(string[] args)
         {
-            AttackState attackState = PSInit();
-            while (true)
-            {
-                attackState.keyInfo = Console.ReadKey();
-                attackState = Processing.CommandProcessor(attackState);
-                Display.Output(attackState);
-            }
+            Start.launchPSAttack();
         }
     }
 }

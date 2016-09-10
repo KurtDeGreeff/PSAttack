@@ -20,7 +20,7 @@ namespace PSAttack
             Random random = new Random();
             int pspLogoInt = random.Next(Strings.psaLogos.Count);
             Console.WriteLine(Strings.psaLogos[pspLogoInt]);
-            Console.WriteLine("PS>Attack is loading...");
+            Console.WriteLine("Loading...");
 
             // create attackState
             AttackState attackState = new AttackState();

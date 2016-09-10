@@ -102,18 +102,35 @@ namespace PSAttack
 
             // get build info
             string buildString;
-            string attackDate = new StreamReader(assembly.GetManifestResourceStream("PSAttack.Resources.attackDate.txt")).ReadToEnd();
             Boolean builtWithBuildTool = true;
-            string buildDate = new StreamReader(assembly.GetManifestResourceStream("PSAttack.Resources.BuildDate.txt")).ReadToEnd();
-            DateTime storedBuildDate = Convert.ToDateTime(attackState.decryptedStore["buildDate"]);
-            DateTime textBuildDate = Convert.ToDateTime(buildDate);
+
+            DateTime storedBuildDate = new DateTime();
+            try
+            {
+                storedBuildDate = Convert.ToDateTime(attackState.decryptedStore["buildDate"]);
+            }
+            catch
+            {
+                
+            }
+
+            DateTime textBuildDate = new DateTime();
+            try
+            {
+                string buildDate = new StreamReader(assembly.GetManifestResourceStream("PSAttack.Resources.BuildDate.txt")).ReadToEnd();
+                textBuildDate = Convert.ToDateTime(buildDate);
+            }
+            catch
+            {
+
+            }
             if (storedBuildDate > textBuildDate)
             {                
-                buildString = "It was custom made by the PS>Attack Build Tool on " + attackDate + "\n"; 
+                buildString = "It was custom made by the PS>Attack Build Tool on " + storedBuildDate + "\n"; 
             }
             else
             {
-                buildString = "It was built on " + buildDate + "\nIf you'd like a version of PS>Attack thats even harder for AV \nto detect checkout http://github.com/jaredhaight/PSAttackBuildTool \n";
+                buildString = "It was built on " + textBuildDate + "\nIf you'd like a version of PS>Attack thats even harder for AV \nto detect checkout http://github.com/jaredhaight/PSAttackBuildTool \n";
                 builtWithBuildTool = false;
             }
 

@@ -126,11 +126,11 @@ namespace PSAttack
             }
             if (storedBuildDate > textBuildDate)
             {                
-                buildString = "It was custom made by the PS>Attack Build Tool on " + storedBuildDate + "\n"; 
+                buildString = " Build Date " + storedBuildDate + "\n\nThis is a custom build."; 
             }
             else
             {
-                buildString = "It was built on " + textBuildDate + "\nIf you'd like a version of PS>Attack thats even harder for AV \nto detect checkout http://github.com/jaredhaight/PSAttackBuildTool \n";
+                buildString = "Build Date " + textBuildDate + "\n\nIf you'd like a version of PS>Attack thats even harder for AV \nto detect checkout http://github.com/jaredhaight/PSAttackBuildTool \n";
                 builtWithBuildTool = false;
             }
 

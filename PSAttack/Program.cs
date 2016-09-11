@@ -126,7 +126,7 @@ namespace PSAttack
             }
             if (storedBuildDate > textBuildDate)
             {                
-                buildString = " Build Date " + storedBuildDate + "\n\nThis is a custom baked.\n"; 
+                buildString = "Build Date " + storedBuildDate + "\n\nThis is a custom baked build.\n"; 
             }
             else
             {
